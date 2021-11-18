@@ -30,6 +30,5 @@ def background_process():
 		return redirect(url_for('index'))
 
 
-
-
-app.run()
+if __name__ == '__main__':
+    app.run()
