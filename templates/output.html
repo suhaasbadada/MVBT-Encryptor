@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="widtd=device-widtd, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" id="applicationStylesheet" href="static/index.css"/>
+  <title>ISAA</title>
+
+     <script>
+      function c1() {
+
+        var copyText = document.getElementById("after_vigenere");
+
+        copyText.select();
+
+        navigator.clipboard.writeText(copyText.value);
+        copyText.setSelectionRange(0, 99999); 
+
+        alert("Copied tde text: " + copyText.value);
+        console.log(copyText)
+    }
+
+      function c2() {
+
+        var copyText = document.getElementById("vignere_to_dsa_enc");
+
+        copyText.select();
+
+        navigator.clipboard.writeText(copyText.value);
+        copyText.setSelectionRange(0, 99999); 
+
+        alert("Copied tde text: " + copyText.value);
+        console.log(copyText)
+    }
+
+    function c3() {
+
+      var copyText = document.getElementById("og_inp");
+
+      copyText.select();
+
+      navigator.clipboard.writeText(copyText.value);
+      copyText.setSelectionRange(0, 99999); 
+
+      alert("Copied tde text: " + copyText.value);
+      console.log(copyText)
+    }
+    </script>
+</head>
+
+<body>
+
+  <form method="POST" action="/output">
+  
+  
+  <div class="split left">
+    <div class="centered">
+      <h1 style="color:white">INPUT</h1>
+      
+      <input class="tbox" type="text" id="user_input" name="usr_inp" value={{input_string}}>
+      <br><br>
+      <input class="tbox" type="text" id="user_input_key" name="usr_inp_key" value={{input_key}}>
+      <br><br>
+      <input class="tbox" type="text" id="decrypt_key" name="usr_inp_dec_key" value={{input_decrypt_key}}>
+      <br><br>
+      <button type="submit" class="button-49" id="encrypt" name="decide" value="encrypt" role="button">Encrypt</button>
+      
+    </div>
+  </div>
+  
+  <div class="split right">
+    <div class="centered">
+      <h1 style="color:whitesmoke">OUTPUT</h1>
+      <table>
+       
+        <tr>
+          <td><input class="tbox" type="text" id="after_vigenere" name="aftvig" value={{vignere_encryption}}> </td>
+          <td><button class="copybtn" type="button" onclick="c1()"><img id="copyimg" src="static/skins/download.png"></button></td>
+        </tr>
+
+        <tr></tr> <tr></tr> <tr></tr> <tr></tr>
+     
+
+        <tr>
+          <td><input class="tbox" type="text" id="vignere_to_dsa_enc" name="vigdsacenc" value={{dsa_encryption}}></td>
+          <td>
+            <button class="copybtn" type="button" onclick="c2()"><img id="copyimg" src="static/skins/download.png"></button></td>
+        </tr>
+
+        <tr></tr> <tr></tr> <tr></tr> <tr></tr>
+
+        <tr>
+          <td><input class="tbox" type="text" id="og_inp" value={{original_input}}></td>
+          <td><button class="copybtn" type="button" onclick="c3()"><img id="copyimg" src="static/skins/download.png"></button></td>
+        </tr>
+        
+
+        
+      </table>
+      
+      <br>
+      <button type="submit" class="button-49" id="encrypt" name="decide" value="reset" role="button">Reset</button>
+    </div>
+    <h1 class="time" style="color:rgb(0, 255, 85)">Runtime:{{exectime}}</h1>
+  </div>
+  
+  
+</form>
+
+</body>
+</html>
+
+
+<!-- <img class="copyimg" src="static/skins/download.png"></img> -->

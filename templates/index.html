@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" id="applicationStylesheet" href="static/index.css"/>
+  <title>ISAA</title>
+
+</head>
+
+<body>
+  <form method="POST" action="/output">
+
+  <div class="split left">
+    <div class="centered">
+      <h1 style="color:whitesmoke">INPUT</h1>
+
+      <table>
+        <tr>
+          <td><input class="tbox" type="text" id="user_input" name="usr_inp" placeholder="Plaintext"></td>
+          <td></td>
+        </tr>
+        <tr></tr> <tr></tr> <tr></tr> <tr></tr>
+
+        <tr>
+          <td><input class="tbox" type="text" id="user_input_key" name="usr_inp_key" placeholder="Encryption Key"></td>
+          <td></td>
+        </tr>
+        <tr></tr> <tr></tr> <tr></tr> <tr></tr>
+
+        <tr>
+          <td><input class="tbox" type="text" id="decrypt_key" name="usr_inp_dec_key" placeholder="Decryption Key"></td>
+          <td></td>
+        </tr>
+      </table>
+      <br>
+      <!-- <input type="submit" class="encrypt" id="encrypt" name="decide" value="encrypt"> -->
+      <button type="submit" class="button-49" id="encrypt" name="decide" value="encrypt" role="button">Encrypt</button>
+
+     
+    </div>
+  
+  <div class="split right">
+    <div class="centered">
+      <h1 style="color:whitesmoke">OUTPUT</h1>
+
+      <table>
+        <tr>
+          <td><input class="tbox" type="text" id="after_vigenere" name="aftvig" placeholder="Vignere Encryption"></td>
+          <td></td>
+        </tr>
+        <tr></tr> <tr></tr> <tr></tr> <tr></tr>
+
+        <tr>
+          <td><input class="tbox" type="text" id="vignere_to_dsa_enc" name="vigdsacenc" placeholder="Binary Tree Encryption"></td>
+          <td></td>
+        </tr>
+        <tr></tr> <tr></tr> <tr></tr> <tr></tr>
+
+        <tr>
+          <td><input class="tbox" type="text" id="og_inp" placeholder="Custom Key Decryption"></td>
+          <td></td>
+        </tr>        
+      </table>
+      <br>
+        
+      
+      <button type="submit" class="button-49" id="encrypt" name="decide" value="reset" role="button">Reset</button>
+    </div>
+  </div>
+</form>
+</body>
+</html>
+
