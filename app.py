@@ -26,8 +26,7 @@ def background_process():
 	
 	if(which_btn=="encrypt"):	
 		return render_template('output.html',exectime=exectime,input_string=input_string,input_key=input_key,input_decrypt_key=input_decrypt_key,vignere_encryption=vignere_encryption,dsa_encryption=dsa_encryption,original_input=original_input)
-	else:
-		return redirect(url_for('index'))
+
 
 
 
