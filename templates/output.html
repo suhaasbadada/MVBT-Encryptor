@@ -13,38 +13,34 @@
         var copyText = document.getElementById("after_vigenere");
 
         copyText.select();
-
+        copyText.setSelectionRange(0, 99999);
         navigator.clipboard.writeText(copyText.value);
-        copyText.setSelectionRange(0, 99999); 
-
-        alert("Copied tde text: " + copyText.value);
-        console.log(copyText)
+        
+        var tooltip = document.getElementById("myTooltip1");
+        tooltip.innerHTML = "Copied: " + copyText.value;
     }
 
-      function c2() {
+    function c2() {
 
         var copyText = document.getElementById("vignere_to_dsa_enc");
-
         copyText.select();
-
+        copyText.setSelectionRange(0, 99999);
         navigator.clipboard.writeText(copyText.value);
-        copyText.setSelectionRange(0, 99999); 
-
-        alert("Copied tde text: " + copyText.value);
-        console.log(copyText)
+        
+        var tooltip = document.getElementById("myTooltip2");
+        tooltip.innerHTML = "Copied: " + copyText.value;
     }
 
     function c3() {
 
       var copyText = document.getElementById("og_inp");
 
-      copyText.select();
-
-      navigator.clipboard.writeText(copyText.value);
-      copyText.setSelectionRange(0, 99999); 
-
-      alert("Copied tde text: " + copyText.value);
-      console.log(copyText)
+        copyText.select();
+        copyText.setSelectionRange(0, 99999);
+        navigator.clipboard.writeText(copyText.value);
+        
+        var tooltip = document.getElementById("myTooltip3");
+        tooltip.innerHTML = "Copied: " + copyText.value;
     }
     </script>
 </head>
@@ -76,8 +72,12 @@
        
         <tr>
           <td><input class="tbox" type="text" id="after_vigenere" name="aftvig" value={{vignere_encryption}}> </td>
-          <td><button class="copybtn" type="button" onclick="c1()"><img id="copyimg" src="static/skins/download.png"></button></td>
-        </tr>
+          <td>
+            <div class="tooltip">
+            <button class="copybtn" type="button" onclick="c1()"><span class="tooltiptext" id="myTooltip1"></span><img id="copyimg" src="static/skins/download.png"></button>
+            </div>
+          </td>
+          </tr>
 
         <tr></tr> <tr></tr> <tr></tr> <tr></tr>
      
@@ -85,14 +85,24 @@
         <tr>
           <td><input class="tbox" type="text" id="vignere_to_dsa_enc" name="vigdsacenc" value={{dsa_encryption}}></td>
           <td>
-            <button class="copybtn" type="button" onclick="c2()"><img id="copyimg" src="static/skins/download.png"></button></td>
+            <div class="tooltip">
+            <button class="copybtn" type="button" onclick="c2()"><span class="tooltiptext" id="myTooltip2"></span>
+              <img id="copyimg" src="static/skins/download.png"></button>
+            </div> 
+            </td>
+            
         </tr>
 
         <tr></tr> <tr></tr> <tr></tr> <tr></tr>
 
         <tr>
           <td><input class="tbox" type="text" id="og_inp" value={{original_input}}></td>
-          <td><button class="copybtn" type="button" onclick="c3()"><img id="copyimg" src="static/skins/download.png"></button></td>
+          <td>
+            <div class="tooltip">
+            <button class="copybtn" type="button" onclick="c3()"><span class="tooltiptext" id="myTooltip3"></span>
+              <img id="copyimg" src="static/skins/download.png"></button>
+              </div>
+          </td>
         </tr>
         
 
