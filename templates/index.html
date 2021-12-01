@@ -33,8 +33,24 @@
           <td><input class="tbox" type="text" id="decrypt_key" name="usr_inp_dec_key" placeholder="Decryption Key"></td>
           <td></td>
         </tr>
+
+        <tr>
+          <td>
+
+            <select name="methods" class="tbox">
+              <option value="empty">Choose Method</option>
+              <option value="modvig">Modified Vigenere</option>
+              <option value="vig">Vigenere</option>
+              <option value="caesar">Caesar</option>
+            </select>
+          </td>
+          <td></td>
+        </tr>
+
       </table>
       <br>
+
+
       <!-- <input type="submit" class="encrypt" id="encrypt" name="decide" value="encrypt"> -->
       <button type="submit" class="button-49" id="encrypt" name="decide" value="encrypt" role="button">Encrypt</button>
 
@@ -47,13 +63,13 @@
 
       <table>
         <tr>
-          <td><input class="tbox" type="text" id="after_vigenere" name="aftvig" placeholder="Vignere Encryption"></td>
+          <td><input class="tbox" type="text" id="after_vigenere" name="aftvig" placeholder="Encrypted Text"></td>
           <td></td>
         </tr>
         <tr></tr> <tr></tr> <tr></tr> <tr></tr>
 
         <tr>
-          <td><input class="tbox" type="text" id="vignere_to_dsa_enc" name="vigdsacenc" placeholder="Binary Tree Encryption"></td>
+          <td><input class="tbox" type="text" id="vignere_to_dsa_enc" name="vigdsacenc" placeholder="First Level Decryption"></td>
           <td></td>
         </tr>
         <tr></tr> <tr></tr> <tr></tr> <tr></tr>
@@ -63,13 +79,15 @@
           <td></td>
         </tr>        
       </table>
-      <br>
-        
+      <br>              
       
       <button type="submit" class="button-49" id="encrypt" name="decide" value="reset" role="button">Reset</button>
+
     </div>
   </div>
 </form>
 </body>
 </html>
 
+
+<!-- name same , value diff-->
