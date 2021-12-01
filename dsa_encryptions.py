@@ -1,8 +1,9 @@
 import collections
 from modified_vignere import mvencrypt,mvdecrypt
+from caesar import caesar_encrypt,caesar_decrypt
+from vignere import vigencrypt,vigdecrypt
 import time
-
-
+import tracemalloc
 
 class newNode():
  
@@ -137,8 +138,10 @@ def vigenereKey(string,key):
     return key
 
 def getVigKey(string,keyword):
-    global start_time
-    start_time=time.time()
+    # global start_time
+    # global mem_starts
+    # start_time=time.time()
+    # mem_starts=tracemalloc.start()
     return vigenereKey(string, keyword)
 
 
@@ -184,10 +187,103 @@ def dec2(p):
 
 def dec3(d,k):
     return mvdecrypt(d,k)
+
+
+def dec4(string,keyword):
+
+    cipher_text = caesar_encrypt(string,keyword)
+   
+    s=cipher_text
+    arr=[]
+
+    for i in range(len(s)):
+        ascii=ord(s[i])
+        arr.append(ascii)
+    temp = arr[len(s)-1]
+    for i in range(0,len(s)-1,2):
+        arr[i]+=i+2
+        arr[i+1]+=i+1
+    if len(s)%2!=0:
+        arr[len(s)-1]=temp+len(s)+1
+
+   
+    b=""
+    for i in range(len(s)):
+        b+=chr(arr[i])
     
-def execution_time():
-    t=(time.time()-start_time)
-    formatted = '{0:.3g}'. format(t)
-    s1=str(formatted)
-    s2=" seconds"
-    return s1+s2
+    
+    root = newNode(b[0])
+
+   
+    i = 1
+    while(i<len(arr)):
+        insert(root, b[i])
+        i+=1
+    
+    mirror(root)
+    
+    p=levelOrderTraversal(root)
+
+    return (p)   
+
+def dec5(p):
+    return decrypt(p)
+
+def dec6(string,key):
+    return caesar_decrypt(string,key)
+
+def dec7(string,keyword):
+
+    cipher_text = vigencrypt(string,keyword)
+   
+    s=cipher_text
+    arr=[]
+
+    for i in range(len(s)):
+        ascii=ord(s[i])
+        arr.append(ascii)
+    temp = arr[len(s)-1]
+    for i in range(0,len(s)-1,2):
+        arr[i]+=i+2
+        arr[i+1]+=i+1
+    if len(s)%2!=0:
+        arr[len(s)-1]=temp+len(s)+1
+
+   
+    b=""
+    for i in range(len(s)):
+        b+=chr(arr[i])
+    
+    
+    root = newNode(b[0])
+
+   
+    i = 1
+    while(i<len(arr)):
+        insert(root, b[i])
+        i+=1
+    
+    mirror(root)
+    
+    p=levelOrderTraversal(root)
+
+    return (p)   
+
+def dec8(p):
+    return decrypt(p)
+
+def dec9(string,key):
+    return vigdecrypt(string,key)
+
+
+# def execution_time():
+    # t=(time.time()-start_time)
+    # formatted = '{0:.3g}'. format(t)
+    # s1=str(formatted)
+    # s2=" seconds"
+    # return s1+s2
+
+# def memory_used():
+#     return tracemalloc.get_traced_memory()[1]-tracemalloc.get_traced_memory()[0]
+
+# tracemalloc.stop()

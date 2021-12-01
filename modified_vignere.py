@@ -15,7 +15,7 @@ def intersecting_text(p,k):
         it+=chr(val)
 
     return it
-
+    
 def final_intersecting_text(itrm,k):
     fit=""
 
