@@ -2,8 +2,7 @@ import collections
 from modified_vignere import mvencrypt,mvdecrypt
 from caesar import caesar_encrypt,caesar_decrypt
 from vignere import vigencrypt,vigdecrypt
-import time
-import tracemalloc
+from time import process_time
 
 class newNode():
  
@@ -276,12 +275,12 @@ def dec9(string,key):
     return vigdecrypt(string,key)
 
 
-# def execution_time():
-    # t=(time.time()-start_time)
-    # formatted = '{0:.3g}'. format(t)
-    # s1=str(formatted)
-    # s2=" seconds"
-    # return s1+s2
+def execution_time(start_time):
+    t=(process_time()-start_time)
+    formatted = '{0:.3g}'. format(t)
+    s1=str(formatted)
+    s2=" seconds"
+    return s1+s2
 
 # def memory_used():
 #     return tracemalloc.get_traced_memory()[1]-tracemalloc.get_traced_memory()[0]
